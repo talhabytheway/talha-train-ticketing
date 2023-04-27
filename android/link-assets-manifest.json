@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/PlusJakartaSans-Bold.ttf",
+      "sha1": "9a5a544d3f7fc45abfa86cc1ef21037ae8e89294"
+    },
+    {
+      "path": "src/assets/fonts/PlusJakartaSans-Regular.ttf",
+      "sha1": "4cde42259c9b930984a2923adece323ab10861b5"
+    },
+    {
+      "path": "src/assets/fonts/Raleway-Bold.ttf",
+      "sha1": "c828019f33d43d0701f14626ab5c48b7cff0d431"
+    }
+  ]
+}
