@@ -10,4 +10,5 @@ export default {
   blue: '#2D9CDB',
   lightBlue: '#4CAFE7',
   whiteBlue: '#F8FCFF',
+  whiter: '#f2f2f2',
 };
