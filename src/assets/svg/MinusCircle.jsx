@@ -10,12 +10,11 @@ const MinusCircle = ({isNotDisabled = false}) => (
     viewBox="0 0 20 20"
     fill="none">
     <G
-      stroke={isNotDisabled ? '#59597C' : '#CACCD7'}
+      stroke={isNotDisabled ? '#59597C' : '#CBCCD7'}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      clipPath="url(#a)"
-      opacity={0.3}>
+      clipPath="url(#a)">
       <Path d="M10 18.333a8.333 8.333 0 1 0 0-16.666 8.333 8.333 0 0 0 0 16.666ZM6.667 10h6.666" />
     </G>
     <Defs>
