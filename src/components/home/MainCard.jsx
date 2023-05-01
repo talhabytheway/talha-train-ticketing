@@ -15,7 +15,7 @@ import ratios from '../../constants/ratios';
 import colors from '../../constants/colors';
 import fonts from '../../constants/fonts';
 
-const MainCard = () => {
+const MainCard = ({navigation}) => {
   const [isEnabled, setIsEnabled] = React.useState(false);
   const [count, setCount] = React.useState(1);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -80,7 +80,9 @@ const MainCard = () => {
               </Pressable>
             </View>
           </View>
-          <View style={styles.shad}>
+          <View
+            onTouchEnd={() => navigation.navigate('TicketList')}
+            style={styles.shad}>
             <TouchableOpacity>
               <LinearGradient
                 colors={['#FE9B4B', '#F47814']}
@@ -200,16 +202,16 @@ const styles = StyleSheet.create({
     paddingVertical: ratios.widthPixel(12),
   },
   mainCardShad: {
-    width: ratios.widthPixel(280),
-    height: ratios.widthPixel(32),
-    backgroundColor: '#1582BF',
-    elevation: 40,
+    width: ratios.widthPixel(300),
+    height: ratios.heightPixel(32),
+    elevation: 24,
     shadowColor: 'rgba(21, 130, 191, 1)',
-    shadowOffset: {width: 0, height: 10},
+    shadowOffset: {width: 0, height: 12},
     shadowRadius: 20,
+    borderRadius: ratios.widthPixel(10),
     alignSelf: 'center',
     position: 'absolute',
-    bottom: ratios.widthPixel(18),
+    bottom: ratios.heightPixel(22),
     zIndex: -1,
   },
 });
