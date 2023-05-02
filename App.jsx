@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {View, StatusBar} from 'react-native';
 import Home from './src/pages/Home';
+import TicketList from './src/pages/TicketList';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -16,6 +17,7 @@ function App() {
           screenOptions={{headerShown: false}}
           initialRouteName="Home">
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="TicketList" component={TicketList} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
