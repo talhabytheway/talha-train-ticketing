@@ -80,6 +80,7 @@ export default Home;
 var styles = StyleSheet.create({
   bg: {
     flex: 1,
+    position: 'relative',
   },
   parent: {
     flex: 1,
@@ -121,5 +122,13 @@ var styles = StyleSheet.create({
     color: colors.darkGray,
     padding: ratios.widthPixel(12),
     paddingTop: 0,
+  },
+  btnBG: {
+    width: '100%',
+    height: ratios.widthPixel(500),
+    bottom: 200,
+    position: 'absolute',
+    zIndex: 100,
+    backgroundColor: '#f29394',
   },
 });

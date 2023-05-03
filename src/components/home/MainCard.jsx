@@ -62,8 +62,8 @@ const MainCard = ({navigation}) => {
                 styles.jakB10,
                 {
                   paddingBottom: ratios.widthPixel(8),
-                  width: ratios.heightPixel(95),
-                  textAlign: 'center',
+                  width: ratios.heightPixel(100),
+                  textAlign: 'right',
                 },
               ]}>
               Jumlah penumpang
@@ -80,10 +80,8 @@ const MainCard = ({navigation}) => {
               </Pressable>
             </View>
           </View>
-          <View
-            onTouchEnd={() => navigation.navigate('TicketList')}
-            style={styles.shad}>
-            <TouchableOpacity>
+          <View style={styles.shad}>
+            <TouchableOpacity onPress={() => navigation.navigate('TicketList')}>
               <LinearGradient
                 colors={['#FE9B4B', '#F47814']}
                 start={{x: 0.5, y: 0}}
@@ -175,7 +173,7 @@ const styles = StyleSheet.create({
   setCount: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: ratios.heightPixel(95),
+    width: ratios.heightPixel(100),
     alignItems: 'center',
   },
   count: {

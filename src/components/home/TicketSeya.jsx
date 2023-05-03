@@ -1,10 +1,11 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import ratios from '../../constants/ratios';
 import colors from '../../constants/colors';
 import fonts from '../../constants/fonts';
 import ArrowIconBlue from '../../assets/svg/ArrowIconBlue';
+import arrowBlur from '../../assets/images/Blurs/blueArrowBlur.png';
 
 const TicketSeya = ({index, location, route, time}) => {
   return (
@@ -34,7 +35,11 @@ const TicketSeya = ({index, location, route, time}) => {
           </View>
           <View style={styles.arrBtnPar}>
             <ArrowIconBlue />
-            <View style={styles.arrBtnShad}></View>
+            <Image
+              source={arrowBlur}
+              resizeMode="contain"
+              style={styles.imgBlur}
+            />
           </View>
         </LinearGradient>
       </View>
@@ -123,18 +128,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 12, height: 12},
     shadowRadius: 20,
   },
-  arrBtnShad: {
-    width: ratios.widthPixel(20),
-    height: ratios.widthPixel(20),
-    alignSelf: 'center',
-    bottom: ratios.heightPixel(10),
-    zIndex: -1,
-    elevation: 22,
-    position: 'absolute',
-    shadowColor: '#004166',
-    shadowOffset: {width: 12, height: 12},
-    shadowRadius: 30,
-  },
   shadCard: {
     width: ratios.widthPixel(200),
     height: ratios.widthPixel(20),
@@ -144,8 +137,15 @@ const styles = StyleSheet.create({
     borderRadius: ratios.widthPixel(100),
     shadowOffset: {width: 0, height: 10},
     alignSelf: 'center',
-
     bottom: ratios.heightPixel(50),
     zIndex: -1,
+  },
+  imgBlur: {
+    width: ratios.widthPixel(50),
+    height: ratios.widthPixel(50),
+    position: 'absolute',
+    zIndex: -1,
+    left: ratios.widthPixel(-14),
+    top: ratios.widthPixel(-6),
   },
 });
