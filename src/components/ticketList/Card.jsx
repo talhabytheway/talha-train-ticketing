@@ -18,6 +18,7 @@ const Card = ({
   ticketLeft,
   trainClass,
   totalTime,
+  passenger,
 }) => {
   return (
     <View>
@@ -54,6 +55,13 @@ const Card = ({
             {ticketLeft !== '' && (
               <Text style={styles.ticketLeft}>{ticketLeft}</Text>
             )}
+            <Text
+              style={[
+                styles.totalTime,
+                {textAlign: 'right', paddingTop: ratios.widthPixel(6)},
+              ]}>
+              {passenger}
+            </Text>
           </View>
           <View>
             <ArrowIconBlue />
