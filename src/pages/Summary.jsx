@@ -108,6 +108,7 @@ const Summary = ({navigation}) => {
                         value={text1}
                         placeholder="Paspor"
                       />
+                      <ArrowUp dimensions={16} style={styles.arrUpRel} />
                       <View
                         style={[
                           styles.borderBottom1,
@@ -298,6 +299,7 @@ const styles = StyleSheet.create({
     fontSize: ratios.fontPixel(13),
     justifyContent: 'center',
     borderRadius: ratios.widthPixel(4),
+    paddingLeft: ratios.widthPixel(8),
   },
   borderBottom1: {
     borderBottomWidth: ratios.widthPixel(2),
@@ -352,5 +354,11 @@ const styles = StyleSheet.create({
     height: ratios.widthPixel(90),
     top: ratios.widthPixel(-42),
     zIndex: -10,
+  },
+  arrUpRel: {
+    position: 'absolute',
+    bottom: ratios.widthPixel(9),
+    right: ratios.widthPixel(8),
+    transform: [{rotate: '180deg'}],
   },
 });
