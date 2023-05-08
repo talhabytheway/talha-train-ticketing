@@ -81,7 +81,7 @@ const Summary = ({navigation}) => {
               <Text style={styles.addPass}>+ Tambah penumpang</Text>
             </TouchableOpacity>
           </View>
-          <ScrollView style={{height: 300}}>
+          <ScrollView style={{height: ratios.widthPixel(270)}}>
             <View style={styles.parentCard}>
               <View style={styles.headerPar}>
                 <View style={styles.namePar}>
@@ -95,7 +95,9 @@ const Summary = ({navigation}) => {
                   </View>
                   <Text style={styles.textHead}>Penumpang 1</Text>
                 </View>
-                <ArrowUp />
+                <TouchableOpacity>
+                  <ArrowUp />
+                </TouchableOpacity>
               </View>
               <View>
                 <View style={styles.bodyPar}>
@@ -219,7 +221,9 @@ const styles = StyleSheet.create({
   },
   passDet: {
     flexDirection: 'row',
-    margin: ratios.widthPixel(16),
+    marginHorizontal: ratios.widthPixel(16),
+    marginTop: ratios.widthPixel(28.5),
+    marginBottom: ratios.widthPixel(19),
     alignItems: 'center',
     justifyContent: 'space-between',
   },
@@ -292,12 +296,14 @@ const styles = StyleSheet.create({
     marginBottom: ratios.widthPixel(8),
   },
   input1: {
+    padding: 0,
     height: ratios.widthPixel(34),
     color: colors.darkGray,
     backgroundColor: '#F4F4F5',
     fontFamily: fonts.JakReg,
     fontSize: ratios.fontPixel(13),
     justifyContent: 'center',
+    textAlignVertical: 'center',
     borderRadius: ratios.widthPixel(4),
     paddingLeft: ratios.widthPixel(8),
   },
@@ -327,7 +333,8 @@ const styles = StyleSheet.create({
   spacebw: {
     paddingTop: ratios.widthPixel(12),
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    gap: ratios.widthPixel(-10),
   },
   filBtn: {
     width: ratios.widthPixel(169),

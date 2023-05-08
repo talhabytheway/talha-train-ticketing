@@ -37,4 +37,6 @@ export default {
   fontPixel,
   pixelSizeVertical,
   pixelSizeHorizontal,
+  SCREEN_WIDTH,
+  SCREEN_HEIGHT,
 };

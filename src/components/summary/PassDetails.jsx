@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import ratios from '../../constants/ratios';
@@ -17,13 +17,15 @@ const TicketSeya = ({name, email}) => {
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.email}>{email}</Text>
         </View>
-        <LinearGradient
-          style={styles.btnPar}
-          colors={['#FE9B4B', '#F47814']}
-          start={{x: 0.5, y: 0}}
-          end={{x: 0.5, y: 1}}>
-          <Text style={styles.btnText}>Tambahkan penumpang</Text>
-        </LinearGradient>
+        <TouchableOpacity>
+          <LinearGradient
+            style={styles.btnPar}
+            colors={['#FE9B4B', '#F47814']}
+            start={{x: 0.5, y: 0}}
+            end={{x: 0.5, y: 1}}>
+            <Text style={styles.btnText}>Tambahkan penumpang</Text>
+          </LinearGradient>
+        </TouchableOpacity>
       </LinearGradient>
     </View>
   );
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
   },
 
   btnPar: {
-    width: ratios.widthPixel(128),
+    paddingHorizontal: ratios.widthPixel(8),
     height: ratios.widthPixel(26),
     alignItems: 'center',
     justifyContent: 'center',
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
   },
 
   textPar: {
-    width: ratios.widthPixel(112),
+    width: ratios.widthPixel(125),
     height: ratios.heightPixel(42),
     justifyContent: 'space-between',
   },

@@ -19,6 +19,7 @@ import hand from '../assets/images/hand.png';
 import MainCard from '../components/home/MainCard';
 import TicketSeya from '../components/home/TicketSeya';
 import Berita from '../components/home/Berita';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Home = prop => {
   let ticketSeya = [
@@ -36,12 +37,14 @@ const Home = prop => {
   return (
     <ImageBackground style={styles.bg} source={bg} resizeMode="stretch">
       <View style={styles.parent}>
-        <View style={styles.ham}>
+        <TouchableOpacity style={styles.ham}>
           <Hamburger />
-        </View>
+        </TouchableOpacity>
         <ScrollView>
           <View style={styles.mainPar}>
-            <Text style={styles.mainHead}>Mau pergi ke mana kali ini?</Text>
+            <Text style={styles.mainHead}>
+              Mau pergi ke{'\n'}mana kali ini?
+            </Text>
             <Image source={hand} style={styles.hand} />
           </View>
           <MainCard {...prop} />
@@ -99,7 +102,7 @@ var styles = StyleSheet.create({
     fontFamily: fonts.JakBol,
     fontSize: ratios.fontPixel(25),
     color: colors.darkGray,
-    width: ratios.widthPixel(154),
+    width: ratios.widthPixel(200),
     lineHeight: ratios.widthPixel(32),
   },
   hand: {

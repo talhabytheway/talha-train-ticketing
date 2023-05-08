@@ -16,9 +16,6 @@ export default function SeatMap() {
     ['e', 'e', 'e', 'e', 'e'],
     ['e', 'e', 'e', 'e', 'e'],
     ['e', 'e', 'e', 'e', 'e'],
-    ['e', 'e', 'e', 'e', 'e'],
-    ['e', 'e', 'e', 'e', 'e'],
-    ['e', 'e', 'e', 'e', 'e'],
   ]);
 
   const handleSeatPress = (rowIndex, colIndex) => {
@@ -55,6 +52,11 @@ export default function SeatMap() {
                   source={seat == 's' && bg}
                   style={styles.imgBg}
                   resizeMode="cover"
+                />
+                <Image
+                  source={!(seat == 'e') && blur}
+                  style={styles.imgBgBlur}
+                  tintColor={seat === 'b' && '#FE9B4B'}
                 />
                 <Image
                   source={!(seat == 'e') && blur}
@@ -107,10 +109,12 @@ const styles = StyleSheet.create({
   },
   imgBgBlur: {
     position: 'absolute',
-    top: ratios.widthPixel(-24),
-    left: ratios.widthPixel(-28),
+    top: ratios.widthPixel(-10),
+    left: ratios.widthPixel(-16),
     zIndex: -1,
-    transform: [{scale: 0.7}],
+    width: ratios.widthPixel(60),
+    height: ratios.widthPixel(60),
+    opacity: 0.8,
   },
   rowThree: {
     marginRight: ratios.widthPixel(20),

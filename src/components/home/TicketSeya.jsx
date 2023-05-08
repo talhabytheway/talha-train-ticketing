@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import ratios from '../../constants/ratios';
@@ -33,14 +33,14 @@ const TicketSeya = ({index, location, route, time}) => {
             <Text style={styles.loc}>{location}</Text>
             <Text style={styles.route}>{route}</Text>
           </View>
-          <View style={styles.arrBtnPar}>
+          <TouchableOpacity style={styles.arrBtnPar}>
             <ArrowIconBlue />
             <Image
               source={arrowBlur}
               resizeMode="contain"
               style={styles.imgBlur}
             />
-          </View>
+          </TouchableOpacity>
         </LinearGradient>
       </View>
       <View style={styles.shadCard}></View>
@@ -70,11 +70,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  kek: {
-    width: 30,
-    height: 30,
-    backgroundColor: 'blue',
-  },
   nearBtnPar: {
     width: ratios.widthPixel(46),
     height: ratios.widthPixel(26),
@@ -83,7 +78,7 @@ const styles = StyleSheet.create({
     borderRadius: ratios.widthPixel(8),
     elevation: 22,
     shadowColor: '#F06B00',
-    shadowOffset: {width: 6, height: 20},
+    shadowOffset: {width: ratios.widthPixel(6), height: ratios.heightPixel(20)},
     shadowRadius: 20,
   },
   nearBtnText: {
@@ -122,7 +117,7 @@ const styles = StyleSheet.create({
     color: colors.lightGray,
   },
   arrBtnPar: {
-    margin: 16,
+    margin: ratios.widthPixel(16),
     elevation: 22,
     shadowColor: '004166',
     shadowOffset: {width: 12, height: 12},
@@ -133,9 +128,9 @@ const styles = StyleSheet.create({
     height: ratios.widthPixel(20),
     elevation: 16,
     shadowColor: 'rgba(21, 130, 191, 1)',
-    shadowRadius: 40,
+    shadowRadius: ratios.widthPixel(40),
     borderRadius: ratios.widthPixel(100),
-    shadowOffset: {width: 0, height: 10},
+    shadowOffset: {width: 0, height: ratios.widthPixel(10)},
     alignSelf: 'center',
     bottom: ratios.heightPixel(50),
     zIndex: -1,

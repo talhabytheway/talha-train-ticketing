@@ -11,9 +11,9 @@ const Route = () => (
     fill="none">
     <Path
       stroke="#E0E0E0"
-      strokeDasharray="8 8"
+      strokeDasharray="7 7"
       strokeMiterlimit={16}
-      d="M0 3h72"
+      d="M12 3h72"
     />
     <Circle cx={3} cy={3} r={2.5} fill="#F2F2F2" stroke="#E0E0E0" />
     <Circle cx={70} cy={3} r={2.5} fill="#2D9CDB" stroke="#2F80ED" />
