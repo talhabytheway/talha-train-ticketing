@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 import fonts from '../../constants/fonts';
@@ -27,7 +27,10 @@ const Card = ({
           <View style={styles.titlePar}>
             <Text style={styles.title}>{title}</Text>
           </View>
-          <View style={styles.pathPar}>
+          <View
+            style={
+              passenger != undefined ? styles.pathParWithGap : styles.pathPar
+            }>
             <View style={styles.pathDep}>
               <Text style={styles.pathName}>{dep}</Text>
               <Text style={styles.pathTime}>{depTime}</Text>
@@ -40,7 +43,11 @@ const Card = ({
               <Text style={styles.pathTime}>{arrTime}</Text>
             </View>
           </View>
-          <View style={styles.classTime}>
+          <View
+            style={[
+              styles.classTime,
+              passenger != undefined && {gap: ratios.widthPixel(13)},
+            ]}>
             <View style={styles.trainClassPar}>
               <Text style={styles.trainClassTxt}>{trainClass}</Text>
             </View>
@@ -63,14 +70,14 @@ const Card = ({
               {passenger}
             </Text>
           </View>
-          <View>
+          <TouchableOpacity>
             <ArrowIconBlue />
             <Image
               source={arrowBlur}
               resizeMode="contain"
               style={styles.imgBlur}
             />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.boxshad}></View>
@@ -105,14 +112,19 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: fonts.JakBol,
     fontSize: ratios.fontPixel(15),
-    lineHeight: ratios.heightPixel(24),
+    lineHeight: ratios.widthPixel(24),
     color: colors.darkGray,
   },
   pathPar: {
-    flexDirection: 'row',
     width: ratios.widthPixel(148),
     justifyContent: 'space-between',
+    flexDirection: 'row',
     alignItems: 'center',
+  },
+  pathParWithGap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: ratios.widthPixel(25),
   },
   pathName: {
     fontFamily: fonts.RalBol,
@@ -143,8 +155,7 @@ const styles = StyleSheet.create({
   },
   classTime: {
     flexDirection: 'row',
-    width: ratios.widthPixel(148),
-    justifyContent: 'space-between',
+    gap: ratios.widthPixel(10),
   },
   totalTime: {
     fontFamily: fonts.JakReg,
@@ -184,7 +195,7 @@ const styles = StyleSheet.create({
     borderRadius: ratios.widthPixel(10),
     alignSelf: 'center',
     position: 'absolute',
-    bottom: ratios.heightPixel(22),
+    bottom: ratios.widthPixel(22),
     zIndex: -1,
   },
 });
