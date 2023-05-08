@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <View style={styles.heroPar}>
       <View style={styles.heroChild}>
-        <Text style={styles.mainHead}>Pilih tempat dudukmu</Text>
+        <Text style={styles.mainHead}>Pilih tempat{'\n'}dudukmu</Text>
         <View style={styles.headChild}>
           <Text style={styles.trainClass}>Ekonomi (C)</Text>
           <Text style={styles.carriage}>Gerbong 2 - 3A</Text>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.JakBol,
     fontSize: ratios.fontPixel(25),
     color: colors.darkGray,
-    width: ratios.widthPixel(148),
+    width: ratios.widthPixel(190),
     lineHeight: ratios.widthPixel(32),
   },
   heroPar: {
