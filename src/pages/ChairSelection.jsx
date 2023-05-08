@@ -7,7 +7,6 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  TextInput,
 } from 'react-native';
 import React from 'react';
 
@@ -17,7 +16,8 @@ import colors from '../constants/colors';
 
 import {BlurView} from '@react-native-community/blur';
 import LinearGradient from 'react-native-linear-gradient';
-import orangeBtnBG from '../assets/images/Blurs/filterButtonBlur.png';
+import orangeBtnBlur from '../assets/images/Blurs/filterButtonBlur.png';
+import btnBG from '../assets/images/btnBg.png';
 
 import bg from '../assets/images/backgrounds/ChairSelection.png';
 import Hero from '../components/chairSelection/Hero';
@@ -52,17 +52,16 @@ const ChairSelection = ({navigation}) => {
           <TouchableOpacity
             style={styles.opacityCont}
             onPress={() => navigation.popToTop()}>
-            <LinearGradient
-              colors={['#85D3FF', '#2596D7']}
-              start={{x: 0.5, y: 0}}
-              end={{x: 0.5, y: 1}}
+            <ImageBackground
+              resizeMode="contain"
+              source={btnBG}
               style={styles.filBtn}>
               <Text style={styles.styleBtn}>PILIH TEMPAT DUDUK W</Text>
-            </LinearGradient>
+            </ImageBackground>
             <Image
-              source={orangeBtnBG}
+              source={orangeBtnBlur}
               tintColor="#50B1E9"
-              style={styles.orangeBtnBG}
+              style={styles.orangeBtnBlur}
             />
           </TouchableOpacity>
         </BlurView>
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
   scrollPar: {
     flexDirection: 'row',
     marginRight: ratios.widthPixel(20),
-    height: 470,
+    height: ratios.widthPixel(470),
   },
   btnBG: {
     width: '100%',
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   filBtn: {
-    width: ratios.widthPixel(312),
+    width: ratios.widthPixel(310),
     height: ratios.widthPixel(45),
     borderRadius: ratios.widthPixel(8),
     marginTop: ratios.widthPixel(12),
@@ -114,12 +113,13 @@ const styles = StyleSheet.create({
   },
   styleBtn: {
     fontFamily: fonts.JakBol,
+    // fontWeight: 'bold',
     fontSize: ratios.fontPixel(13),
     marginBottom: ratios.widthPixel(2),
     letterSpacing: ratios.widthPixel(3),
     color: 'white',
   },
-  orangeBtnBG: {
+  orangeBtnBlur: {
     width: ratios.widthPixel(350),
     height: ratios.widthPixel(90),
     top: ratios.widthPixel(-42),
