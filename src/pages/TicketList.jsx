@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
   navbarPar: {
     paddingTop: StatusBar.currentHeight,
-    paddingBottom: ratios.widthPixel(16),
+    paddingBottom: ratios.widthPixel(3),
     borderBottomWidth: ratios.widthPixel(2),
     borderTopWidth: ratios.widthPixel(0),
     borderBottomLeftRadius: ratios.widthPixel(12),
