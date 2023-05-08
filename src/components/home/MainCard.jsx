@@ -62,8 +62,8 @@ const MainCard = ({navigation}) => {
                 styles.jakB10,
                 {
                   paddingBottom: ratios.widthPixel(8),
-                  width: ratios.heightPixel(100),
-                  textAlign: 'right',
+                  width: ratios.widthPixel(100),
+                  textAlign: 'left',
                 },
               ]}>
               Jumlah penumpang
@@ -84,8 +84,8 @@ const MainCard = ({navigation}) => {
             <TouchableOpacity onPress={() => navigation.navigate('TicketList')}>
               <LinearGradient
                 colors={['#FE9B4B', '#F47814']}
-                start={{x: 0.5, y: 0}}
-                end={{x: 0.5, y: 1}}
+                start={{x: 1, y: 0}}
+                end={{x: 1, y: 0.9}}
                 locations={[0, 1]}
                 style={styles.ticketBtn}>
                 <Text style={styles.ticketBtnTxt}>CARI TIKET</Text>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     margin: ratios.widthPixel(16),
     marginTop: 0,
     backgroundColor: '#FAFDFE',
-    borderWidth: 2,
+    borderWidth: ratios.widthPixel(2),
     borderColor: '#fff',
     padding: ratios.widthPixel(16),
     borderRadius: ratios.widthPixel(8),
@@ -152,6 +152,10 @@ const styles = StyleSheet.create({
   switch: {
     marginRight: ratios.widthPixel(12),
     paddingVertical: ratios.widthPixel(8),
+    transform: [
+      {scaleX: ratios.SCREEN_WIDTH / 450},
+      {scaleY: ratios.SCREEN_WIDTH / 450},
+    ],
   },
   switchPar: {
     alignItems: 'center',
@@ -168,8 +172,8 @@ const styles = StyleSheet.create({
     paddingBottom: ratios.widthPixel(2),
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  addPas: {},
   setCount: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -195,9 +199,11 @@ const styles = StyleSheet.create({
   ticketBtnTxt: {
     fontFamily: fonts.JakBol,
     fontSize: ratios.fontPixel(13),
+    lineHeight: ratios.widthPixel(10),
     letterSpacing: 1.6,
     color: 'white',
-    paddingVertical: ratios.widthPixel(12),
+    paddingTop: ratios.widthPixel(16),
+    paddingBottom: ratios.widthPixel(14),
   },
   mainCardShad: {
     width: ratios.widthPixel(300),
