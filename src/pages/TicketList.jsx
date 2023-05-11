@@ -11,6 +11,7 @@ import {
 import React from 'react';
 
 import bg from '../assets/images/backgrounds/TicketList.png';
+import navBg from '../assets/images/summaryNavBg.png';
 import Navbar from '../components/ticketList/Navbar';
 import Dates from '../components/ticketList/Dates';
 import ratios from '../constants/ratios';
@@ -82,10 +83,13 @@ const TicketList = ({navigation}) => {
   return (
     <ImageBackground style={styles.bg} source={bg} resizeMode="stretch">
       <View style={styles.parent}>
-        <View style={styles.navbarPar}>
+        <ImageBackground
+          source={navBg}
+          resizeMode="stretch"
+          style={styles.navbarPar}>
           <Navbar navigation={navigation} />
           <Dates />
-        </View>
+        </ImageBackground>
         <ScrollView
           style={styles.cardPar}
           contentContainerStyle={{paddingTop: 16}}
@@ -132,12 +136,13 @@ const styles = StyleSheet.create({
   navbarPar: {
     paddingTop: StatusBar.currentHeight,
     paddingBottom: ratios.widthPixel(3),
-    borderBottomWidth: ratios.widthPixel(2),
-    borderTopWidth: ratios.widthPixel(0),
-    borderBottomLeftRadius: ratios.widthPixel(12),
-    borderBottomRightRadius: ratios.widthPixel(12),
-    borderColor: '#fff',
-    backgroundColor: 'rgba(255, 255, 255, .4)',
+    // borderBottomWidth: ratios.widthPixel(1.5),
+    // borderTopWidth: ratios.widthPixel(0),
+    // borderBottomLeftRadius: ratios.widthPixel(12),
+    // borderBottomRightRadius: ratios.widthPixel(12),
+    // borderStartColor: '#fff',
+    // borderEndColor: 'transparent',
+    // backgroundColor: 'rgba(255, 255, 255, .4)',
   },
   cardPar: {
     marginHorizontal: ratios.widthPixel(16),

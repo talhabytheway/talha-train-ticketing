@@ -12,6 +12,7 @@ import {
 import React from 'react';
 
 import bg from '../assets/images/backgrounds/Summary.png';
+import navBg from '../assets/images/summaryNavBg.png';
 import Heart from '../assets/svg/Heart';
 import Users from '../assets/svg/Users';
 import EmojiHappy from '../assets/svg/EmojiHappy';
@@ -33,6 +34,9 @@ const Summary = ({navigation}) => {
   const [text1, onChangeText1] = React.useState('Paspor');
   const [text2, onChangeText2] = React.useState('A 38910381');
   const [text3, onChangeText3] = React.useState('Ibnu Batutah');
+  const [text10, onChangeText10] = React.useState('Paspor');
+  const [text20, onChangeText20] = React.useState('A 38910381');
+  const [text30, onChangeText30] = React.useState('Ibnu Batutah');
   const cardData = {
     title: 'Joglosemarkerto',
     fare: 'Rp149.000',
@@ -52,10 +56,13 @@ const Summary = ({navigation}) => {
   return (
     <ImageBackground style={styles.bg} source={bg} resizeMode="stretch">
       <View style={styles.parent}>
-        <View style={styles.navbarPar}>
+        <ImageBackground
+          source={navBg}
+          resizeMode="stretch"
+          style={styles.navbarPar}>
           <Navbar navigation={navigation} />
           <Card {...cardData} />
-        </View>
+        </ImageBackground>
         <View>
           <View style={styles.passPar}>
             <View style={styles.passDetails}>
@@ -147,6 +154,71 @@ const Summary = ({navigation}) => {
                 </View>
               </View>
             </View>
+            <View style={styles.parentCard}>
+              <View style={styles.headerPar}>
+                <View style={styles.namePar}>
+                  <View style={styles.emoji}>
+                    <EmojiHappy />
+                    <Image
+                      source={blurArr}
+                      style={styles.blurArr}
+                      tintColor="#F47814"
+                    />
+                  </View>
+                  <Text style={styles.textHead}>Penumpang 2</Text>
+                </View>
+                <TouchableOpacity>
+                  <ArrowUp />
+                </TouchableOpacity>
+              </View>
+              <View>
+                <View style={styles.bodyPar}>
+                  <View style={styles.inputRow1}>
+                    <View style={styles.inputPar1}>
+                      <Text style={styles.inputTitle1}>Jenis Identitas</Text>
+                      <TextInput
+                        style={[styles.input1, {backgroundColor: '#E9F3F8'}]}
+                        onChangeText={onChangeText10}
+                        value={text10}
+                        placeholder="Paspor"
+                      />
+                      <ArrowUp dimensions={16} style={styles.arrUpRel} />
+                      <View
+                        style={[
+                          styles.borderBottom1,
+                          {borderBottomColor: '#4CAFE7'},
+                        ]}
+                      />
+                    </View>
+                    <View style={styles.inputPar2}>
+                      <Text style={styles.inputTitle1}>Nomor identitas</Text>
+                      <TextInput
+                        style={[styles.input1]}
+                        onChangeText={onChangeText20}
+                        value={text20}
+                        placeholder="A 38910381"
+                      />
+                      <View style={styles.borderBottom1} />
+                    </View>
+                  </View>
+                  <View style={styles.inputPar3}>
+                    <Text style={styles.inputTitle1}>Nama lengkap</Text>
+                    <TextInput
+                      style={[styles.input1]}
+                      onChangeText={onChangeText30}
+                      value={text30}
+                      placeholder="Ibnu Batutah"
+                    />
+                    <View style={[styles.borderBottom1]} />
+                  </View>
+                  <Text style={styles.paragraph}>
+                    Penumpang bayi tidak mendapat kursi sendiri. Penumpang
+                    dibawah 18 tahun dapat mengisi dengan nomor tanda pengenal
+                    lain atau tanggal lahir (ddmmyyyy)
+                  </Text>
+                </View>
+              </View>
+            </View>
           </ScrollView>
         </View>
         <BlurView
@@ -204,12 +276,13 @@ const styles = StyleSheet.create({
   navbarPar: {
     paddingTop: StatusBar.currentHeight,
     paddingHorizontal: ratios.widthPixel(16),
-    borderBottomWidth: ratios.widthPixel(2),
-    borderTopWidth: ratios.widthPixel(0),
-    borderBottomLeftRadius: ratios.widthPixel(12),
-    borderBottomRightRadius: ratios.widthPixel(12),
-    borderColor: '#fff',
-    backgroundColor: 'rgba(255, 255, 255, .4)',
+    // backgroundColor: 'black',
+    // borderBottomWidth: ratios.widthPixel(2),
+    // borderTopWidth: ratios.widthPixel(0),
+    // borderBottomLeftRadius: ratios.widthPixel(12),
+    // borderBottomRightRadius: ratios.widthPixel(12),
+    // borderColor: '#fff',
+    // backgroundColor: 'rgba(255, 255, 255, .4)',
   },
   passPar: {
     marginTop: ratios.widthPixel(8),
