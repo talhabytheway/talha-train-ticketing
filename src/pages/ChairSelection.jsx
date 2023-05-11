@@ -56,7 +56,7 @@ const ChairSelection = ({navigation}) => {
               resizeMode="contain"
               source={btnBG}
               style={styles.filBtn}>
-              <Text style={styles.styleBtn}>PILIH TEMPAT DUDUK W</Text>
+              <Text style={styles.styleBtn}>PILIH TEMPAT DUDUK</Text>
             </ImageBackground>
             <Image
               source={orangeBtnBlur}
