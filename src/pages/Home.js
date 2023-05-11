@@ -95,7 +95,7 @@ var styles = StyleSheet.create({
   },
   mainPar: {
     padding: ratios.widthPixel(32),
-    height: ratios.heightPixel(134),
+    height: ratios.widthPixel(134),
     width: '100%',
   },
   mainHead: {
