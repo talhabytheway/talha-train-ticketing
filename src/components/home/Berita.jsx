@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   beritaPar: {
     width: ratios.widthPixel(262),
     height: ratios.widthPixel(150),
-    marginHorizontal: ratios.widthPixel(11),
+    marginHorizontal: ratios.widthPixel(8),
     borderWidth: ratios.widthPixel(2),
     backgroundColor: '#fafafb',
     borderColor: '#fafafb',
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
   img: {
     height: '100%',
-    width: ratios.widthPixel(127),
-    right: 3,
+    width: ratios.widthPixel(130),
+    right: ratios.widthPixel(6),
   },
 });
