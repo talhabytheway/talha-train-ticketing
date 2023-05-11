@@ -168,8 +168,8 @@ const styles = StyleSheet.create({
     color: colors.darkGray,
   },
   addPasPar: {
-    paddingTop: ratios.widthPixel(16),
-    paddingBottom: ratios.widthPixel(2),
+    marginTop: ratios.widthPixel(16),
+    marginBottom: ratios.widthPixel(2),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     marginTop: ratios.heightPixel(-2),
   },
   ticketBtn: {
-    width: ratios.widthPixel(128),
+    paddingHorizontal: ratios.widthPixel(24),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: ratios.widthPixel(8),
