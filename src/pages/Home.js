@@ -51,8 +51,8 @@ const Home = prop => {
           <View style={styles.tickSeyPar}>
             <Text style={styles.tickSey}>Tiket saya</Text>
             <ScrollView
-              contentContainerStyle={{paddingLeft: 8}}
-              contentInset={{left: -8}}
+              contentContainerStyle={{marginLeft: 12}}
+              contentInset={{left: -12}}
               horizontal
               showsHorizontalScrollIndicator={false}>
               {ticketSeya.map((e, index) => (
@@ -63,8 +63,8 @@ const Home = prop => {
           <View style={styles.beritaPar}>
             <Text style={styles.tickSey}>Berita</Text>
             <ScrollView
-              contentContainerStyle={{paddingLeft: 8}}
-              contentInset={{left: -8}}
+              contentContainerStyle={{marginLeft: 12}}
+              contentInset={{left: -12}}
               horizontal
               showsHorizontalScrollIndicator={false}>
               {berita.map((e, index) => (
@@ -91,11 +91,12 @@ var styles = StyleSheet.create({
   },
   ham: {
     marginHorizontal: ratios.widthPixel(32),
-    marginVertical: ratios.widthPixel(8),
+    paddingTop: ratios.widthPixel(28),
+    paddingBottom: ratios.widthPixel(8),
   },
   mainPar: {
     padding: ratios.widthPixel(32),
-    height: ratios.widthPixel(134),
+    height: ratios.widthPixel(128),
     width: '100%',
   },
   mainHead: {
